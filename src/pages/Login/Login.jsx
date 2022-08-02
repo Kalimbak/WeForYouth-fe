@@ -77,7 +77,7 @@ function Login() {
                 />
               </div>
             </div>
-            <div className="done">Forgot Password?</div>
+            <div className="done"> <Link to="/reset" className="reset"> Forgot Password?</Link></div>
           </div>
           <div className="sign">
             <Link to="/">
