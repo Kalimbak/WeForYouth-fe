@@ -1,0 +1,183 @@
+
+*{
+    box-sizing: border-box; 
+}
+/* NAVBAR */
+.navbar{
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #FDE4E4;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+/* LOGO  CHILD*/
+.logo{
+    width: 20%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img{
+    height: 55px;
+}
+
+/* NAVIGATIONS CHILD */
+
+.navigations{
+    width: 70%;
+    float: left;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.route {
+    text-decoration: none;
+    color: black;
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.0rem;
+}
+
+/* NAVIGATION CHILD */
+
+.navigation{
+    width: 40%;
+    float: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.list select{
+    background-color: transparent;
+    outline: none;
+    font-family: 'Lora';
+    font-size: 0.9rem;
+}
+
+.rout{
+    color: black;
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 18px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.route1{
+    color: #FFFFFF;
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.8rem;
+    line-height: 15px;
+    text-decoration: none;
+}
+
+.sign{
+    height: 30px;
+    width: 100px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0A66C2;
+}
+
+@media (max-width: 900px) {
+    .navigation{
+        width: 30%;
+        margin-right: 25px;
+    }
+}
+
+/* .navbar{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: Hug (72.5%);
+    width: 100%;
+    gap: 250px;
+   
+}
+
+.navbar img {
+    
+}
+.menu {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    height: 45px;
+
+    
+}
+.menu li{
+    position: relative;
+    list-style: none;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+
+
+.route:hover{
+    color: #0A66C2;
+    border-bottom: 2px solid #0A66C2;
+}
+
+
+
+.navigation{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    margin-right: 50px;
+    gap: 30px;
+    
+}
+
+
+
+
+
+@media (max-width: 900px) {
+    .navbar {
+      width: 100%;
+      
+    }
+    .menu{
+        width: 30%;
+        
+    }
+
+    .navigation{
+        width: 30%;
+    }
+
+    .logo{
+        width: 20%;
+    }
+  } */
