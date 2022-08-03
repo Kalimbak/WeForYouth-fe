@@ -2,14 +2,16 @@
   width: 100%;
   background-color: white;
   display: flex;
+  /* min-width: 50%; */
   /* flex-direction: column; */
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
 
+
 .leftside {
   width: 30%;
-  height: 714px;
+  height: 622px;
   display: inline-block;
   background-color: #fde4e4;
   font-style: lora;
@@ -103,9 +105,10 @@
 }
 input {
   border-radius: 10px;
-  border-color: transparent;
+  border-color: rgb(2, 2);
   margin-left: 80%;
-  background-color: #d9d9d9;
+  border-width: 1px;
+  /* background-color: #d9d9d9; */
   width: 95%;
   height: 30px;
 }
@@ -118,7 +121,7 @@ input {
 .done {
   font-size: 10px;
   color: #0a66c2;
-  margin-left: 25%;
+  margin-left: 38%;
   margin-top: -10px;
 }
 .link {
@@ -152,4 +155,5 @@ input {
 .reset{
   text-decoration: none;
   color: #0a66c2;
+
 }

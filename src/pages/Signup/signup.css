@@ -1,0 +1,128 @@
+.first {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+.intro{
+    align-items: center;
+    margin-left: -80px;
+}
+
+.remember {
+  margin-right: 280px;
+  width: 300px;
+  color: #6b6565;
+}
+
+.remember span {
+  color: #4387ca;
+}
+.names {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+  position: relative;
+  padding: 15px;
+}
+.leftsides {
+  width: 30%;
+  height: 622px;
+  display: inline-block;
+  background-color: #fde4e4;
+  font-style: lora;
+  text-align: center;
+  position: fixed;
+}
+.otherside {
+  margin-left: 30%;
+  display: flex;
+  flex-direction: column;
+}
+.users {
+  display: flex;
+  margin-left: -100px;
+}
+.selects {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+  /* position: relative; */
+  padding: 15px;
+}
+select {
+    margin-left: 270px;
+    height: 40px;
+
+  width: 530px;
+  /* height: 40px; */
+  padding: 5px 5px;
+  border-radius: 10px;
+  border-color: transparent;
+  background-color: #d9d9d9;
+}
+.input{
+    width: 512px;
+    margin-left: 270px;
+}
+.input1{
+    width: 300px;
+    padding: auto;
+    /* margin-left: 270px; */
+    margin-left: -1px;
+    margin-right: -19px;
+}
+#name{
+    margin-left: -77px;
+    width: 30%;
+
+}
+#input{
+    width: 700px;
+}
+form{
+    margin-top: -69px;
+    margin-left: -79px;
+    text-align: center ;
+}
+#eyeTwo,
+#eyeOne {
+  color: #373737;
+  top: 35px;
+  left: 470px;
+  position: relative;
+}
+#selector{
+    margin-left: -63px;
+}
+.Name{
+margin-top: 30px;    
+}
+.sign button{
+    margin-left: -60px;
+}
+.name h4{
+    bottom: 44%;
+    left: 22%;
+    text-align: left;
+    position: absolute;
+    font-style: lora;
+}
+#username{
+left: 40px;
+}
+#username1{
+    left: 150px;
+    }
+.name h5 {
+    bottom: 50%;
+    left: 42%;
+    text-align: left;
+    position: absolute;
+    font-style: lora;
+  }
+
+  

@@ -20,7 +20,9 @@ function App() {
   },[]);
 
   return (
+
     (loading ? <Loadingpage />:(
+
     <div className="App">
      <Router>
     
