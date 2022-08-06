@@ -1,7 +1,8 @@
 import React from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import data from '../../data/dataHomep.json'
-// import Footer from '../../components/footer/Footer'
+import Content from '../../data/comment.json'
+
 
 import './Home.css'
 
@@ -13,6 +14,7 @@ import Pro from '../../assets/images.jpeg'
 import Facebook from '../../assets/facebook.svg'
 import Twitter from '../../assets/twitter.svg'
 import Linkedin from '../../assets/linkedin.svg'
+import Footer from '../../components/footer/Footer'
 
 function Home() {
   return (
@@ -89,16 +91,19 @@ function Home() {
           <p>What do people <br /> think of us</p>
         </div>
         <div className="D-testimony">
-          <div className="testimony-box">
+           {
+            Content.Data_comment.map(Data =>{
+              return(
+                <div className="testimony-box" key={Data.id}>
             <div className='Quote'>
               <img src={Quote} alt="" />
             </div>
             <div className="box-top">
               <div className="top-title">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing </p>
+                <p>{Data.title}</p>
               </div>
               <div className="top-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et venenatis eget ullamcorper aliquam. Malesuada dignissim quis tempus velit vitae vulputate elit est. Mattis neque mattis nunc a congue.</p>
+                <p>{Data.body}</p>
               </div>
             </div>
             <div className="box-bottom-person">
@@ -107,14 +112,18 @@ function Home() {
               </div>
               <div className="info-perso">
                 <div className="perso-name">
-                  <p>Marius</p>
+                  <p>{Data.name}</p>
                 </div>
                 <div className="perso-name-t">
-                  <span>Psychiatre</span>
+                  <span>{Data.function}</span>
                 </div>
               </div>
             </div>
           </div>
+              )
+            })
+           }
+          
         </div>
        </div>
        <div className='E'>
@@ -147,9 +156,7 @@ function Home() {
             <p>We Care for you, we are here for you.</p>
            </div>
        </div>
-       <div className='F'>
-        Footer
-       </div>
+       <Footer />
       </div>
     </div>
   )

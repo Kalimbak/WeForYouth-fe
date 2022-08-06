@@ -1,0 +1,19 @@
+.footer{
+    width: 100%;
+    height: 73px;
+    display: flex;
+    align-items: center;
+    background: #F7D2D2;
+    border: 1px solid;
+}
+
+.footer p{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: 0.1em;
+    text-transform: capitalize;
+    color: #4387CA;
+    opacity: 0.55;
+}
