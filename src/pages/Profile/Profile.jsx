@@ -31,7 +31,7 @@ function Profile() {
           <p>Add an Avatar</p>
         </div>
         <div className="right-img-avatar">
-            <img src="" alt="your image" />
+            <img src="" alt="choose your avatar" />
           <div className="right-picture-choose">
             <button className="choose" type=''>
               Choose Avatar
