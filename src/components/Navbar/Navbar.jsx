@@ -5,10 +5,14 @@ import './Navbar.css'
 
 import Logo from '../../assets/logo.svg'
 import Account from '../../assets/account.svg'
+import Menu from '../../assets/menuButton.svg'
 
 function Navbar() {
   return (
     <div className='navbar'>
+      <div className="Menu">
+        <img src={Menu} alt="" />
+      </div>
       <div className="logo">
           <Link to='/'> <img src={Logo} alt="Logo" /></Link>
       </div>
@@ -35,12 +39,8 @@ function Navbar() {
                 <option value="English">English</option>
               </select>
               </div>
-            <div className='log'>
               <Link className='rout'to="/Login"><img src={Account} alt='avatar'/> Login</Link>
-            </div>
-            <div className='sign'>
               <Link className='route1'to="/Signup">Sign up</Link>
-            </div>
         </div>
     </div>
   )
