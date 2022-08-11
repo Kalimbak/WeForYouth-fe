@@ -27,6 +27,8 @@
     margin-left: 3.5rem;
     width: 50%;
     background-image: url('../../assets/FrameB.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .ecriture{
@@ -35,18 +37,19 @@
 }
 
 .ecriture-top{
-    font-family: 'Lora';
+    font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
-    font-size: 2.5rem;
+    font-size: 3rem;
+    line-height: 60px;
     text-align: left;
     background-color: transparent;
-    display: flex;
 }
 
+
 .start{
-    height: 30px;
-    width: 158px;
+    height: 50px;
+    width: 150px;
     background-color: #0A66C2;
     border-radius: 8px;
     margin-top: 1.7rem;
@@ -59,7 +62,7 @@
     color: #FFFFFF;
     font-style: normal;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 16px;
 }
 
 .imageF {
@@ -67,8 +70,8 @@
 }
 
 .imageF img{
-    width: 500px;
-    height: 500px;
+    width: 90%;
+    height: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,7 +107,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* gap: 5px; */
 }
 .mentor{
     display: flex;
@@ -165,7 +167,8 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    border-bottom: 2px solid #F7D2D2;
+    background: #FCF2FC;
+    backdrop-filter: blur(12px);
 }
 
 .C-left-side{
@@ -527,18 +530,20 @@
 
 
 /*  */
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
+
     .imageF{
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
+        margin-right: 50px;
         display: flex;
-        justify-content: center;
         align-items: center;
     }
 
     .A{
-        height: 400px;
-        
+        height: 300px;
+        width: 91%;
+        border: 1px solid;
     }
 
     .ecriture div{

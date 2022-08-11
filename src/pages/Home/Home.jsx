@@ -27,7 +27,7 @@ function Home() {
           <div className='ecrit'>
             <div className='ecriture'>
                 <div className='ecriture-top'>
-                  It's time for a new way <br /> to Connect
+                  It's time for a new way <br/> <font color="#0A66C2"> Connect </font>
                 </div> 
             </div>
             <div className="start">
@@ -37,23 +37,6 @@ function Home() {
           <div className='imageF'>
             <img src={Ellipse} alt='Community'/>
           </div>
-       </div>
-       <div className='B'>
-        <div className='B-mentors'>All Mentors</div>
-        <div className='Men'>
-           {
-            data.map( datas=> {
-                return(
-                  <div className='mentor' key={datas.id}>
-                    <img src={datas.image} alt="" />
-                    <p>{datas.Nom}</p>
-                    <span>{datas.Occupation}</span>
-                  </div>
-                )
-            })
-           }
-        </div>
-        <div className="learn">Learn more</div>
        </div>
        <div className='C'>
           <div className="C-left-side">
@@ -65,6 +48,9 @@ function Home() {
               <p>When you&rsquo;re ready to engage with community ,the quality of your <br /> experience counts.</p>
            </div>
            <div className='left-side-3'>
+            {data.map(datas=>{
+              
+            })}
               <div className="left-side-3-box1">
                   <div className="box-left">
                     <img src={Clarity} alt="" />
@@ -86,6 +72,24 @@ function Home() {
             <img src={Together} alt="" />
           </div>
        </div>
+       <div className='B'>
+        <div className='B-mentors'>All Mentors</div>
+        <div className='Men'>
+           {
+            data.map( datas=> {
+                return(
+                  <div className='mentor' key={datas.id}>
+                    <img src={datas.image} alt="" />
+                    <p>{datas.Nom}</p>
+                    <span>{datas.Occupation}</span>
+                  </div>
+                )
+            })
+           }
+        </div>
+        <div className="learn">Learn more</div>
+       </div>
+
        <div className='D'>
         <div className="D-header">
           <p>What do people <br /> think of us</p>
