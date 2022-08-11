@@ -35,5 +35,25 @@
                 "name":"Nadji",
                 "function":"Lawyer"
             }
+        ],
+        "choose_us":[
+            {
+                "id":1,
+                "title":"Confiddential",
+                "comment":"Allows you to get secure and private ",
+                "img":"/assets/clarity.svg"
+            },
+            {
+                "id":2,
+                "title":"Confortable to use",
+                "comment":"No needd to get unconforable to communicate",
+                "img":"/assets/heart-filled.svg"
+            },
+            {
+                "id":3,
+                "title":"Flexible",
+                "comment":"Usable any time  flexible to use and easy to access anytime.",
+                "img":"src/assets/clarity.svg"
+            }            
         ]
     }
