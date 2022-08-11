@@ -40,7 +40,7 @@ function Navbar() {
               </select>
               </div>
               <Link className='rout'to="/Login"><img src={Account} alt='avatar'/> Login</Link>
-              <Link className='route1'to="/Signup">Sign up</Link>
+              <Link className='route1'to="/Signup">Signup</Link>
         </div>
     </div>
   )
