@@ -3,8 +3,7 @@
     height: 73px;
     display: flex;
     align-items: center;
-    background: #F7D2D2;
-    border: 1px solid;
+    background: #C8A2C8;
 }
 
 .footer p{
@@ -13,7 +12,8 @@
     font-size: 20px;
     line-height: 26px;
     letter-spacing: 0.1em;
+    margin-left: 40px;
     text-transform: capitalize;
     color: #4387CA;
-    opacity: 0.55;
+    opacity: 1;
 }
