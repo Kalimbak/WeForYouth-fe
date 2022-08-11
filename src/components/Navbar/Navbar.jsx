@@ -22,13 +22,13 @@ function Navbar() {
                 <Link className='route' to="/">Home</Link>
             </div>
             <div className='mentors'>
-                <Link className='route' to="/">Mentors</Link>
+                <Link className='route' to="/">About us</Link>
             </div>
             <div className='Community'>
-                <Link className='route' to="/">Community</Link>
+                <Link className='route' to="/">Mentors</Link>
             </div>
             <div className='About'>
-                <Link className='route' to="/">About us</Link>
+                <Link className='route' to="/">Community</Link>
             </div>
           </div>
       </div>
