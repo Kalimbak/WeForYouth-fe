@@ -76,6 +76,9 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    -khtml-border-radius: 50%;
     margin-top: 25px;
     margin-bottom: 45px;
     margin-left: 60px;
@@ -557,17 +560,22 @@
 @media (max-width: 1000px) {
 
     .imageF{
-        width: 250px;
-        height: 250px;
+        width: auto;
+        height: auto;
         margin-right: 50px;
+        border-radius: 50%;
+        -moz-border-radius:50%;
+        -webkit-border-radius:50%;
+        -khtml-border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
-    .A{
+    .A::after{
         height: 400px;
         width: 91%;
+        padding-bottom: 91%;
         border: 1px solid;
     }
 
