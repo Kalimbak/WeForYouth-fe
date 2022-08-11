@@ -9,6 +9,7 @@ import Signup from './pages/Signup/Signup';
 import Pagenotfound from './pages/Pagenotefound/pagenotfound';
 import Loadingpage from './pages/loadingpage/loadingpage';
 
+
 function App() {
   // const [loading, setLoading] = useState(true);
 
@@ -22,7 +23,7 @@ function App() {
     <div className="App">
      <Router>
        <Routes>
-         <Route path='/' element={<Home/>}/>
+         <Route path='/' element={<Home />}/>
          <Route path='/Login' element={<Login/>}/>
          <Route path='/Profile' element={<Profile/>}/>
          <Route path='/reset' element={<Reset/>}/>

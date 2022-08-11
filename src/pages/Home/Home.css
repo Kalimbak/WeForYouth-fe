@@ -114,7 +114,7 @@
     justify-content: center;
     align-items: center;
     height: 16rem;
-    width: 14rem;
+    width: 15.5rem;
     padding: 31px 52px;
     background-color: #FFFFFF;
     border-radius: 0.18rem;
@@ -125,19 +125,20 @@
 .mentor p{
     display: flex;
     flex-direction: column;
-    width: 150px;
-    font-family: 'Lora';
+    width: 190px;
+    font-family: 'Ubuntu';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     letter-spacing: 0.08em;
+    margin-top: 5px;
 }
 
 .mentor span{
-    font-family: 'Lora';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
+    margin-top: 19px;
     letter-spacing: 0.08em;
 }
 
@@ -145,6 +146,7 @@
     height: 6em;
     width: 6em;
     border-radius: 50%;
+    margin-bottom: 10px;
 }
 
 .learn{
@@ -187,33 +189,30 @@
     margin-bottom: 10px;
 }
 
-.left-side-1-top, .left-side-1-bottom{
+.left-side-1-top{
     font-style: normal;
     font-weight: 700;
     font-size: 32px;
     line-height: 41px;
-    display: flex;
+    text-align: left;
 }
-
-.left-side-1-bottom{
-    color: #0A66C2;
-}
-
 
 .left-side-2{
-    width: 350px;
+    width: 440px;
     height: 28px;
     margin-left: 60px;
-    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
     display: flex;
     align-items: center;
+    text-align: left;
 }
 
 .left-side-2 p{
     margin-left: 0px;
     font-style: normal;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 16px;
 }
 
 .left-side-3{
@@ -222,7 +221,7 @@
     margin-left: 60px; 
 }
 
-.left-side-3-box1, .left-side-3-box2, .left-side-3-box3{
+.left-side-3-box1{
     width: 436px;
     height: 100px;
     display: flex;
@@ -233,16 +232,28 @@
 }
 
 .box-left{
-    width: 100px;
+    width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid;
+}
+
+.box-right{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
 }
 
 .box-right span{
+    height: 40px;
     font-style: normal;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 18px;
+    margin-top: 10px;
+    text-align:left ;
+    align-items: center;
 }
 
 .box-right p{
@@ -258,12 +269,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .C-right-side img{
     height: 350px;
     width: 550px;
     border-radius: 15px;
+    margin-top: 140px;
 }
 
 /* D */
@@ -313,8 +326,8 @@
     justify-content: center;
     align-items: center;
     gap: 5px;
-    background: #F3F3F3;
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+    background: #EEDCEE;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
 }
 
 .Quote{
@@ -404,7 +417,7 @@
     height: 380px;
     display: flex;
     flex-direction: column;
-    background: #F3F3F3;
+    background: #EEDCEE;
 }
 
 .E-top-part{
@@ -440,7 +453,7 @@
 
 .box-1-left{
     height: 44px;
-    width: 568px;
+    width: 600px;
     display: flex;
     align-items: center;
 }
@@ -448,7 +461,7 @@
 .box-1-left p{
     font-style: normal;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 25px;
     line-height: 26px;
     letter-spacing: 0.1em;
     text-transform: capitalize;
@@ -472,6 +485,7 @@
     display: flex;
     align-items: center;
     text-align: left;
+
 }
 
 .box-2-left ul li{
@@ -498,15 +512,17 @@
     outline: none;
     border: none;
     background: #FFFFFF;
+    margin: 0;
     border-radius: 10px;
 }
 
 ::placeholder{
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 20px;
     line-height: 18px;
     display: flex;
+    padding: 0 8px;
     align-items: center;
     color: rgba(0, 0, 0, 0.25);
 }
@@ -538,10 +554,11 @@
         margin-right: 50px;
         display: flex;
         align-items: center;
+        justify-content: center;
     }
 
     .A{
-        height: 300px;
+        height: 400px;
         width: 91%;
         border: 1px solid;
     }
@@ -551,7 +568,9 @@
     }
 
     .B{
-        height: 400px;
+        height: 300px;
+        width: 91%;
+        border: 1px solid;
     }
 
     .B p{
@@ -572,5 +591,23 @@
         height: 1.8rem;
         width: 7rem;
         font-size: small;
-    }    
+    }   
+    
+    .C{
+        height: 600px;
+        width: 91%;
+        border: 1px solid;
+    }
+
+    .D{
+        height: 300px;
+        width: 91%;
+        border: 1px solid;
+    }
+
+    .E{
+        height: 300px;
+        width: 91%;
+        border: 1px solid;
+    }
 }

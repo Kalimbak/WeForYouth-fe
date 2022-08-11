@@ -41,31 +41,25 @@ function Home() {
        <div className='C'>
           <div className="C-left-side">
            <div className="left-side-1">
-              <div className="left-side-1-top">Why us? A fresh new</div>
-              <div className="left-side-1-bottom">perspective</div>
+              <div className="left-side-1-top">Why us? <font color="#0A66C2">A fresh new perspective </font></div>
            </div>
            <div className="left-side-2">
-              <p>When you&rsquo;re ready to engage with community ,the quality of your <br /> experience counts.</p>
+              <p>When you&rsquo;re ready to engage with community ,the quality of your experience counts.</p>
            </div>
            <div className='left-side-3'>
-            {data.map(datas=>{
-              
-            })}
-              <div className="left-side-3-box1">
+            {Content.choose_us.map(datas=>{
+              return(
+                <div className="left-side-3-box1" key={datas.id}>
                   <div className="box-left">
-                    <img src={Clarity} alt="" />
+                    <img src={datas.img} alt="" />
                   </div>
                   <div className="box-right">
-                    <p>Confidential</p>
-                    <span>Allows you to get secure and private </span>
+                    <p>{datas.title}</p>
+                    <span>{datas.comment}</span>
                   </div>
               </div>
-              <div className="left-side-3-box2">
-
-              </div>
-              <div className="left-side-3-box3">
-
-              </div>
+              )
+            })}
            </div>
           </div>
           <div className="C-right-side">
@@ -89,10 +83,9 @@ function Home() {
         </div>
         <div className="learn">Learn more</div>
        </div>
-
        <div className='D'>
         <div className="D-header">
-          <p>What do people <br /> think of us</p>
+          <p>What do people think of us</p>
         </div>
         <div className="D-testimony">
            {
@@ -134,12 +127,12 @@ function Home() {
            <div className="E-top-part">
             <div className="part-box-1">
               <div className="box-1-left">
-                <p>Stay connect with us WEFORYOUTH</p>
+                <p>Stay connect with us WE<font color="#0A66C2">FOR</font>YOUTH</p>
               </div>
               <div className="box-1-right">
-                <img src={Linkedin} alt="q" />
-                <img src={Twitter} alt="b" />
-                <img src={Facebook} alt="c" />
+               <a href="http://"> <img src={Linkedin} alt="q" /></a>
+               <a href="http://"><img src={Twitter} alt="b" /></a>
+               <a href="http://"><img src={Facebook} alt="c" /></a>
               </div>
             </div>
             <div className="part-box-2">
