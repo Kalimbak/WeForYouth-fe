@@ -169,8 +169,11 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    background: #FCF2FC;
+    background-color: #EEDCEE;
     backdrop-filter: blur(12px);
+    position: relative;
+    z-index: -1;
+    /* Tu dois prendre */
 }
 
 .C-left-side{
@@ -403,11 +406,17 @@
 
 .perso-name{
     display: flex;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
 }
 
 .perso-name-t{
     display: flex;
     margin-top: 0px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
 }
 
 

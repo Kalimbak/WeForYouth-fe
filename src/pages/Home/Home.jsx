@@ -8,7 +8,7 @@ import './Home.css'
 
 import Together from '../../assets/together.jpg'
 import Ellipse from '../../assets/ellipse.svg'
-import Clarity from '../../assets/clarity.svg'
+// import Clarity from '../../assets/clarity.svg'
 import Quote from '../../assets/quote.svg'
 import Pro from '../../assets/images.jpeg'
 import Facebook from '../../assets/facebook.svg'
@@ -120,7 +120,6 @@ function Home() {
               )
             })
            }
-          
         </div>
        </div>
        <div className='E'>
