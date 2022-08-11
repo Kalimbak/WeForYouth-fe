@@ -51,7 +51,7 @@ function Signup() {
               <div className="users">
                 
               <div className="name">
-                <h4 id='username1'>Email</h4>
+                <h4 id='username1'>Name</h4>
         
 
                 <input
@@ -62,7 +62,7 @@ function Signup() {
                 />
               </div>
               <div className="name" id='name'>
-                <h4 id='username'>Email</h4>
+                <h4 id='username'>Username</h4>
         
 
                 <input
