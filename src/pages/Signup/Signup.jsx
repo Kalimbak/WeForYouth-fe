@@ -2,18 +2,47 @@ import React, {useState} from 'react'
 import Logo from "../../assets/Vector.png";
 import { BiArrowBack } from "react-icons/bi";
 import * as AiIcons from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./signup.css"
+import { UserRepositoryImpl } from '../../data/repository/user-repository';
+import checkPassword from "../../utils/check-password";
+import getFormData from "../../utils/get-form-data";
+// import {RegisterUserFormData} from "../../data/models/types";
 // import AiOutlineDown 
 
 function Signup() {
-  const [showPassword, setShowPassword] = useState("")
-
+  const userRepository = new UserRepositoryImpl(checkPassword);
+  const [showPassword, setShowPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
   const handleShowPassword = (e) => {
     e.preventDefault();
     setShowPassword((value) => !value);
   };
+  /**
+   * 
+   * @param {Event} evt 
+   */
+  const submitUserData = async (evt)=>{
+    evt.preventDefault();
+    /**
+     * @type {HTMLFormElement}
+     */
+    const form = evt.target;
+    /**
+     * @type {RegisterUserFormData}
+     */
+    const formData = getFormData(form);
+    console.log(formData);
+    setIsLoading(true);
+    const resp = await userRepository.registerUser(formData);
+    setIsLoading(false);
+    if(resp == false){
+      navigate("/");
+    }
+  }
   return (
+    isLoading ? <h1>Is loading</h1> :
     <div className='first'>
          <div className="leftsides">
         <div className="logos">
@@ -41,7 +70,7 @@ function Signup() {
             </p>
           </div>
         </div>
-        <form action="">
+        <form onSubmit={submitUserData} action="">
           <div className="form">
             <div className="intro">
               Sign Up To WE<span>FOR</span>YOUTH
@@ -57,7 +86,7 @@ function Signup() {
                 <input
                   // id="pasword-field"
                   // type={showPassword ? "text" : "password"}
-                  name="password"
+                  name="name"
                   className="input1"
                 />
               </div>
@@ -68,7 +97,7 @@ function Signup() {
                 <input
                   // id="pasword-field"
                   // type={showPassword ? "text" : "password"}
-                  name="password"
+                  name="username"
                   className="input1"
                 />
               </div>
@@ -180,10 +209,7 @@ function Signup() {
             </div>
           </div>
           <div className="sign">
-            <Link to="/">
-              {" "}
-              <button>Create Account</button>{" "}
-            </Link>
+              <button type='submit'>Create Account</button>
           </div>
 
         </form>
