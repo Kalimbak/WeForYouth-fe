@@ -157,7 +157,7 @@
 }
 
 .right-add-community input{
-    padding:0 10px;
+    /* padding:0 0px; */
     margin: 0;
     width: 350px;
     border: none;

@@ -38,7 +38,7 @@ function Profile() {
         </div>
         <div className="right-add-community">
           <p>Add your bio</p>
-          <input type="text" placeholder='Enter the community you&rsquo;re joining' />
+          <input type="text" placeholder='What other users can know about you' />
         </div>
         <div className='save-form'>
           <button className='saver' type='submit'>Save</button>
