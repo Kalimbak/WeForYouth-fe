@@ -3,17 +3,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import './profile.css'
-import Logo from '../../assets/logo.svg'
+import Sidebar from '../../components/sidebar/sidebar'
+// import Logo from '../../assets/logo.svg'
 import Arrow from '../../assets/arrow-line.svg'
 
 function Profile() {
   return (
     <div className='profile'>
-      <div className="profile-left">
-        <div className="profile-logo">
-          <img src={Logo} alt="" />
-        </div>
-      </div>
+      <Sidebar />
       <div className='profile-right'>
         <div className="back-btn">
           <Link to='/signup'>
@@ -40,7 +37,7 @@ function Profile() {
           </div>
         </div>
         <div className="right-add-community">
-          <p>Add your community</p>
+          <p>Add your bio</p>
           <input type="text" placeholder='Enter the community you&rsquo;re joining' />
         </div>
         <div className='save-form'>
