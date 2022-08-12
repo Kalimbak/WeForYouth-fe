@@ -1,5 +1,5 @@
 import './App.css';
-// import { useState, useEffect } from 'react';
+// import { useState, useEffect,useNavigate } from 'react';
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
@@ -11,18 +11,22 @@ import Loadingpage from './pages/loadingpage/loadingpage';
 
 
 function App() {
-  // const [loading, setLoading] = useState(true);
-
+  // const [loading, setLoading] = useState(false);
+  // const navigate = useNavigate();
   // useEffect(() =>{
   //     setLoading(true)
   //     setTimeout(()=>{
   //         setLoading(false)
+  //         navigate('/')
   //     },10000)
   // },[]);
+
   return (
     <div className="App">
      <Router>
+     {/* {loading ? (<Loadingpage /> ):( */}
        <Routes>
+        
          <Route path='/' element={<Home />}/>
          <Route path='/Login' element={<Login/>}/>
          <Route path='/Profile' element={<Profile/>}/>
@@ -30,7 +34,9 @@ function App() {
          <Route path='/Signup' element={<Signup/>}/>
          <Route path='/loadingpage' element={ <Loadingpage/>} />
          <Route path='/*' element={<Pagenotfound/>}/>
+        
        </Routes>
+       {/* )} */}
      </Router>
     </div>
   );
