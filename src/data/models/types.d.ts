@@ -10,3 +10,14 @@ export interface UserModel {
 export interface RegisterUserFormData extends UserModel{
     checkPassword: string;
 }
+
+export interface LoginModel {
+    email: email;
+    password: password;
+}
+export type CommunityModel = {
+    id: string,
+    name: string
+  
+}
+

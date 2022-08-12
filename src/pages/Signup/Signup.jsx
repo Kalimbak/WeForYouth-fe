@@ -3,6 +3,7 @@ import Logo from "../../assets/Vector.png";
 import { BiArrowBack } from "react-icons/bi";
 import * as AiIcons from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
+import Select from "react-select"
 import "./signup.css"
 import { UserRepositoryImpl } from '../../data/repository/user-repository';
 import checkPassword from "../../utils/check-password";
@@ -11,6 +12,20 @@ import getFormData from "../../utils/get-form-data";
 // import AiOutlineDown 
 
 function Signup() {
+  const[ communities, setCommunities] = useState([]);
+  useEffect(() => {
+   (async () => {
+    const c = await userRepository.getAllCommuties();
+    setCommunities(c);
+   })
+  }, [])
+  
+
+  const genders =[
+    { value:"female", label: "female"},
+    { value:"male", label: "male"},
+    
+      ]
   const userRepository = new UserRepositoryImpl(checkPassword);
   const [showPassword, setShowPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -36,13 +51,14 @@ function Signup() {
     console.log(formData);
     setIsLoading(true);
     const resp = await userRepository.registerUser(formData);
-    setIsLoading(false);
-    if(resp == false){
+    setIsLoading(true);
+    if(resp === true){
       navigate("/");
+      // toast.error("Invalid Email or password")
     }
   }
   return (
-    isLoading ? <h1>Is loading</h1> :
+    // isLoading ? <h1>Is loading</h1> :
     <div className='first'>
          <div className="leftsides">
         <div className="logos">
@@ -106,25 +122,34 @@ function Signup() {
               <div className="Name">
               <div className="name">
                 <h4 id='selector'>Select Community</h4>
-                <select
-                  
-                  name="password"
+                {/* <Select
+                  options={commuties}
+                  name="community"
+                  placeholder="hello"
                   className="select"
                   id='input'
 
-                />
+                /> */}
+                <select name="" id="">
+                  {
+                    communities.map(community => {
+                      return <option value = {community.id}>{community.name}</option>
+                    })
+                  }
+                </select>
               </div>
             <div className="name">
                 <h4 id='selector'>Gender</h4>
               
 
-                <select
-                  name="password"
+                <Select
+                options={genders}
+                  name="gender"
                   className="input"
                   id='input'
                 />
               </div>
-              <div className="name">
+              {/* <div className="name">
                 <h4 id='selector'>Age</h4>
                
 
@@ -132,6 +157,20 @@ function Signup() {
 
                   name="password"
                   className="select"
+                  id='input'
+
+                />
+              </div> */}
+               <div className="name">
+                <h4 id='selector'>Date</h4>
+        
+
+                <input
+                  // id="pasword-field"
+                  // type={showPassword ? "text" : "password"}
+                  name="date"
+                  type="date"
+                  className="input"
                   id='input'
 
                 />
@@ -143,7 +182,7 @@ function Signup() {
                 <input
                   // id="pasword-field"
                   // type={showPassword ? "text" : "password"}
-                  name="password"
+                  name="email"
                   className="input"
                   id='input'
 
@@ -209,7 +248,9 @@ function Signup() {
             </div>
           </div>
           <div className="sign">
-              <button type='submit'>Create Account</button>
+              <button type='submit'>
+              {isLoading ? "Loading...": "Create Account"}
+              </button>
           </div>
 
         </form>
