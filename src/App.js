@@ -21,9 +21,9 @@ function App() {
 
   return (
 
-    (loading ? <Loadingpage />:(
 
-    <div className="App">
+    (loading ? <Loadingpage />:(
+  <div className="App">
      <Router>
     
        <Routes>
