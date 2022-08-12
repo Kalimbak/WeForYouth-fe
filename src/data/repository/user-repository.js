@@ -2,6 +2,7 @@ import { SERVER_URL } from "../constants";
 
 export class UserRepositoryImpl{
     REGISTER_USER_ENDPOINT= "/api/user/register";
+    GET_COMMUNITIES_ENDPOINT= "/api/communities";
     /**
      * 
      * @param {(password: string, confirmPassword: string): boolean} checkPassword 
@@ -35,7 +36,7 @@ export class UserRepositoryImpl{
             date: userFormData.date,
             gender: userFormData.gender
         }
-        const endPoint = `${SERVER_URL}${this.REGISTER_USER_ENDPOINT}`;
+        const endPoint = `${SERVER_URL}/api/user/register`;
         const request = fetch(
             endPoint,
             {
@@ -44,13 +45,37 @@ export class UserRepositoryImpl{
             }
         );
         const response = await request;
-        if(response.status == 200) return true;
+        if(response.status === 200) return true;
         return false;
     }
-    login(){
-
+    // /**
+    //  * 
+    //  * @param {loginModel} loginForm 
+    //  * @param {Boolean}
+    //  */
+     login(){
+// const loginData = {
+//     email: loginForm.email,
+//     password: loginForm.password
+// }
+// const login = fetch(
+//     `${SERVER_URL}/api/user/login`,
+//     {
+//         method: "POST",
+//         body: JSON.stringify(loginData)
+//     }
+// );
+// const response = await login;
+// if(responce.status == 200) return true;
+// return false;
     }
     getAllUsers(){
 
+    }
+    async getAllCommuties(){
+        const endPoint = `${SERVER_URL}/api/communities`;
+        const response = await fetch(endPoint);
+        const communities = await response.json()
+        return communities.data.comunities;
     }
 }

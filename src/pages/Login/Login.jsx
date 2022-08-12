@@ -1,94 +1,200 @@
-import React, { useState } from "react";
-import Logo from "../../assets/Vector.png";
-import { BiArrowBack } from "react-icons/bi";
+import React, {  useState, useEffect } from "react";
+import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
-import { Link } from "react-router-dom";
+import * as EmailValidator from "email-validator";
+import { Formik } from "formik";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { SERVER_URL } from "../../data/constants";
+import LoginSkeleton from "./LoginSkeleton";
 
-function Login() {
-  const [showPassword, setShowPassword] = useState("");
+const LoginComponent = () => {
+  const [skeleton, setSkeleton] = useState(false);
+  // const [users, setUsers] = useState(null);
+  const [loading, setIsLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(true);
 
-  const handleShowPassword = (e) => {
-    e.preventDefault();
-    setShowPassword((value) => !value);
+  const redirect = useNavigate();
+
+  useEffect(() => {});
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSkeleton(true);
+    }, 500);
+    return () => clearTimeout(timer);
+  });
+
+  const handleLogin = (values) => {
+    setIsLoading(true);
+    let headersList = {
+      Accept: "*/*",
+      "Content-Type": "application/json",
+    };
+
+    let bodyContent = JSON.stringify({
+      email: values.email,
+      password: values.password,
+    });
+    
+
+    fetch(`${SERVER_URL}/user/login`, {
+      method: "POST",
+      body: bodyContent,
+      headers: headersList,
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((result) => {
+        if (result.status === "success") {
+          toast.info("User logged in successfully ");
+
+          localStorage.setItem("token", result.token);
+          localStorage.setItem("role", result.data.user.role);
+          localStorage.setItem("userName", result.data.user.firstName);
+          localStorage.setItem("userEmail", result.data.user.email);
+
+          if (
+            result.data.user.role === "admin" 
+          ) {
+            redirect("/AdminDashboard");
+          }  else if(
+            result.data.user.role === "user"
+          ) {
+            redirect("/UserPage")
+          }
+        } else {
+          toast.error("Invalid email or password", { theme: "colored" });
+        }
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        toast.error("Internal sever erroe!", { theme: "colored" });
+        setIsLoading(false);
+      });
+      console.log("....", bodyContent);
   };
+
+    const handleShowPassword = (e) => {
+      e.preventDefault();
+
+      setShowPassword((value) => !value);
+    };
+
   return (
-    <div className="login">
-      <div className="leftside">
-        <div className="logos">
-          <img src={Logo} alt="" />
-          <p className="logo">
-            We<span>for</span>youth
-          </p>
-        </div>
-      </div>
-      <div className="rightside">
-        <div className="top">
-          <div className="back">
-            {/* <img src={Back} alt="" /> */}
-            <Link to="/" className="bck">
-              {" "}
-              <BiArrowBack />
-            </Link>
-          </div>
-          <div className="forget">
-            <p>
-              Not a member?{" "}
-              <Link to="/Signup" className="link">
-                <span>Sign up now</span>
-              </Link>
-            </p>
-          </div>
-        </div>
-        <form action="">
-          <div className="form">
-            <div className="intro">
-              Sign In To WE<span>FOR</span>YOUTH
-            </div>
-         
-            <div className="log">
-              <div className="name">
-                <h5>Username & Email Address</h5>
-                <input name="username" className="input" />
-              </div>
-              <div className="name">
-                <h4>Password</h4>
-                {showPassword ? (
-                  <div className="icon">
-                    <AiIcons.AiOutlineEye
-                      id="eyeOne"
-                      onClick={handleShowPassword}
-                    />
-                  </div>
-                ) : (
-                  <div className="icon">
-                    <AiIcons.AiOutlineEyeInvisible
-                      id="eyeTwo"
-                      onClick={handleShowPassword}
-                    />
-                  </div>
-                )}
+    <Formik
+      initialValues={{ email: "", password: "" }}
+      onSubmit={(values) => handleLogin(values)}
+      validate={(values) => {
+        let errors = {};
+        if (!values.email) {
+          errors.email = "Email is required!";
+        } else if (!EmailValidator.validate(values.email)) {
+          errors.email = "Invalid email address format.";
+        }
 
-                <input
-                  // id="pasword-field"
-                  type={showPassword ? "text" : "password"}
-                  name="password"
-                  className="input"
-                />
+        const passwordRegex = /(?=.*[0-9])/;
+        if (!values.password) {
+          errors.password = "Password is required";
+        } else if (values.password.length < 8) {
+          errors.password = "Password must be 8 characters long!";
+        } else if (!passwordRegex.test(values.password)) {
+          errors.password = "Password must contain atleast 1 number!";
+        }
+        return errors;
+      }}
+    >
+      {(props) => {
+        const {
+          values,
+          touched,
+          errors,
+          // isSubmitting,
+          handleChange,
+          handleBlur,
+          handleSubmit,
+        } = props;
+
+        return (
+          <div>
+            {skeleton ? (
+              <div className="container">
+
+                <div>
+
+                  <form onSubmit={handleSubmit} className="form">
+                    <div className="icon">
+                      <FaIcons.FaUserCircle id="userIcon" />
+                    </div>
+                    <input
+                      id="email-field"
+                      type="email"
+                      name="email"
+                      placeholder="Email"
+                      value={values.email}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      className={errors.email && touched.email && "error"}
+                    />{" "}
+                    {errors.email && touched.email && (
+                      <div className="input-feedback">{errors.email}</div>
+                    )}
+                    {showPassword ? (
+                      <div className="icon">
+                        <AiIcons.AiOutlineEyeInvisible
+                          id="eyeOne"
+                          onClick={handleShowPassword}
+                        />
+                      </div>
+                    ) : (
+                      <div className="icon">
+                        <AiIcons.AiOutlineEye
+                          id="eyeTwo"
+                          onClick={handleShowPassword}
+                        />
+                      </div>
+                    )}
+                    <input
+                      id="pasword-field"
+                      type={showPassword ? "password" : "text"}
+                      name="password"
+                      placeholder="Password"
+                      value={values.password}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      className={errors.password && touched.password && "error"}
+                    />{" "}
+                    {errors.password && touched.password && (
+                      <div className="input-feedback">{errors.password}</div>
+                    )}
+                    <div className="checkbox">
+                      <input type="checkbox" />{" "}
+                      <label className="check-label" htmlFor="Stay logged in">
+                        Remember me{" "}
+                      </label>
+                    </div>
+                    <button type="submit" className="login-button" id="btn">
+                      {loading ? "Loading..." : "Login"}
+                    </button>
+                    <h2 className="forgot-password">
+                      {" "}
+                      <Link to="/Reset-link">Forgot Password?</Link>
+                    </h2>
+                  </form>
+                </div>
+                <ToastContainer />
               </div>
-            </div>
-            <div className="done"> <Link to="/reset" className="reset"> Forgot Password?</Link></div>
+            ) : (
+              <LoginSkeleton />
+            )}
           </div>
-          <div className="sign">
-            <Link to="/">
-              {" "}
-              <button>Sign In</button>{" "}
-            </Link>
-          </div>
-        </form>
-      </div>
-    </div>
+        );
+      }}
+    </Formik>
   );
-}
+};
 
-export default Login;
+export default LoginComponent;
