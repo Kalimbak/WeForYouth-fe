@@ -1,0 +1,24 @@
+.sidebar{
+    background-color: brown;
+}
+
+.profile-left{
+    grid-column: span 1;
+    padding: 30px;
+    align-items: center;
+    background-color: #FDE4E4;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.profile-logo{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.profile-logo img{
+    height: 6.74em;
+    width: 25.72em;
+    display: flex;
+    justify-content: center;
+}
